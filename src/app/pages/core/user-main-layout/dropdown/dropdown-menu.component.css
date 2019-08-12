@@ -1,0 +1,27 @@
+a{
+  display: block;
+  cursor: pointer;
+  text-decoration: none;
+  margin-left: 20px;
+}
+a span{
+  display: inline;
+  color: white;
+  padding-right: 5px;
+}
+a p{
+  transition: 0.5s;
+  color: white;
+  display: inline-block;
+  margin: 0px;
+}
+a:hover > p{
+  color: #acacac;
+}
+a > app-dropdown-menu{
+  font-size: 0px;
+  transition: 0.2s;
+}
+a:hover > app-dropdown-menu{
+  font-size: 14px;
+}

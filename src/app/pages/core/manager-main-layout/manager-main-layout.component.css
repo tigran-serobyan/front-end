@@ -1,0 +1,103 @@
+.header {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 40px;
+  background: #1e1e1e;
+  color: #fff;
+  transition: 1s;
+}
+
+.left {
+  position: fixed;
+  top: 40px;
+  left: 0px;
+  max-width: 50px;
+  height: 99%;
+  background: #1e1e1e;
+  color: #fff;
+  padding: 15px 15px 65px;
+  box-sizing: border-box;
+  overflow: scroll;
+  box-sizing: border-box;
+  transition: 0.2s ease-out;
+  min-width: 50px;
+}
+
+::-webkit-scrollbar {
+  width: 0px; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
+}
+
+.left:hover {
+  min-width: 100px;
+  max-width: 100%;
+}
+
+.left a {
+  display: block;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.left a span {
+  display: inline;
+  color: white;
+  padding-right: 5px;
+}
+
+.left a p {
+  font-size: 0px;
+  display: inline;
+  margin: -1px;
+  transition: 0.2s ease-out;
+  color: white;
+}
+
+.left:hover a p {
+  transition: 0.3s ease-in;
+  font-size: 14px;
+  margin: 0px;
+}
+
+.left a:hover > p {
+  color: #acacac;
+}
+
+.left a a {
+  margin-left: 20px;
+  display: none;
+  height: 0px;
+  transition: 0.5s;
+}
+
+.left a > app-dropdown-menu {
+  font-size: 0px;
+  transition: 0.2s;
+}
+
+.left a:hover > app-dropdown-menu {
+  font-size: 14px;
+}
+
+.log-out-button {
+  float: right;
+  padding: 10px;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.log-out-button:hover {
+  color: #acacac;
+}
+
+.content {
+  margin: 55px 0px 0px 55px;
+}
+.fa-r:before {
+  content: 'R';
+  font-weight: bold;
+  font-family: Arial;
+}

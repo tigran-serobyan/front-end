@@ -1,0 +1,31 @@
+.tabs{
+  display: inline-block;
+  width: 75%;
+  margin: 10px 5%;
+  box-sizing: border-box;
+  text-align: center;
+}
+select{
+  width: 5%;
+  margin-right: 10%;
+}
+.tabs li{
+  display: inline-block;
+  list-style-type: none;
+  padding: 10px;
+  background: #1e1e1e;
+  color: white;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.tabs span:nth-child(1) li{
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+.tabs span:nth-last-child(1) li{
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.tabs li:hover{
+  background: #444444;
+}

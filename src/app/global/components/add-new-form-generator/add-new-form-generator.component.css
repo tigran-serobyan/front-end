@@ -1,0 +1,73 @@
+form {
+  display: block;
+  width: 48%;
+  margin: auto 25%;
+}
+
+form input {
+  width: 95%;
+  margin: 2.5%;
+  box-sizing: border-box;
+}
+
+form textarea {
+  margin: 10px 5%;
+  min-width: 87%;
+  max-width: 87%;
+  min-height: 50px;
+}
+
+form span div {
+  background: #FFF;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  width: 100%;
+  border-radius: 3px;
+}
+
+ul {
+  width: 100%;
+  overflow-x: auto;
+  border-bottom: 2px solid #DDD;
+  box-sizing: border-box;
+  padding: 0px;
+}
+
+ul li {
+  display: inline-block;
+  list-style-type: none;
+  margin: 5px 1px 1px;
+  padding: 5px 0px 0px;
+  width: 15%;
+  transition: 0.5s;
+  border-bottom: solid 2px #0000;
+  float: left;
+  text-align: center;
+}
+
+ul li span {
+  transition: 0.3s;
+  width: 0%;
+  display: block;
+  margin: 10px auto 0px;
+  height: 2px;
+}
+
+ul .active span {
+  width: 100%;
+  background: #4285F4;
+}
+
+ul li:hover span {
+  width: 100%;
+  background: #4285F4;
+}
+
+ul .active {
+  color: #4285F4;
+}
+
+ul li:hover {
+  color: #4285F4;
+}

@@ -1,0 +1,25 @@
+<table>
+  <tr>
+    <th *ngFor="let column of columns">
+      {{column.name}}
+    </th>
+  </tr>
+  <tr *ngFor="let item of list">
+    <td *ngFor="let column of columns; let i = index">
+      <span *ngIf="column.key == 'action buttons'">
+        <button *ngFor="let button of column.buttons" (click)="emitAction(button.click)">{{button.name}}</button>
+      </span>
+      <span *ngIf="column.type == 'image tag'">
+        <img *ngIf="item[column.key]" [src]="item[column.key]" [height]='column.height'>
+      </span>
+      <span *ngIf="column.key == 'locales'">
+        <span [ngClass]="['language', lang]" *ngFor="let lang of item[column.key]">
+          {{lang}}
+        </span>
+      </span>
+      <span *ngIf="column.key != 'action buttons' && column.type != 'image tag' && column.key != 'locales'">
+        {{item[column.key]}}
+      </span>
+    </td>
+  </tr>
+</table>

@@ -1,0 +1,85 @@
+.invite_new_user {
+  width: 40%;
+  display: inline-block;
+  margin: 0px 30%;
+}
+
+.invite_new_user input {
+  width: 55%;
+  box-sizing: border-box;
+}
+
+.invite_new_user button {
+  width: 40%;
+  box-sizing: border-box;
+}
+
+input {
+  outline: none;
+  padding: 5px;
+  margin: 5px;
+  border: solid 2px #ccc;
+  transition: 0.5s;
+}
+
+input:focus {
+  border: solid 2px #aaa;
+}
+
+button {
+  outline: none;
+  padding: 5px;
+  color: white;
+  background: #aaa;
+  border: solid 2px #aaa;
+  transition: 0.5s;
+}
+
+button:hover {
+  background: #ac0202;
+  border: solid 2px #ac0202;
+}
+
+.send_invitation_button:hover {
+  background: #02ac02;
+  border: solid 2px #02ac02;
+}
+
+.send_request_button:hover {
+  background: #0388cc;
+  border: solid 2px #0388cc;
+}
+
+table {
+  border: none;
+  border-collapse: collapse;
+  margin: auto;
+}
+
+td {
+  padding: 10px 15px 10px 15px;
+}
+
+th {
+  padding: 10px;
+}
+
+tr:nth-child(even) {
+  background: #ddd;
+  border-top: solid 1px #ccc;
+}
+
+tr:nth-child(odd) {
+  background: #eee;
+  border-top: solid 1px #ccc;
+}
+
+tr:nth-child(1) {
+  background: #333;
+  color: white;
+  border: none;
+}
+
+td b {
+  margin-left: 5px;
+}

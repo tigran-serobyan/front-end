@@ -1,0 +1,23 @@
+<div class="invite_new_user">
+  <input type="text" (input)="onInputInvitationEmail($event)">
+  <button (click)="onUserInvitation()" class="send_invitation_button"> Send invitation</button>
+</div>
+<table>
+  <tr>
+    <th>Username</th>
+    <th>Role</th>
+    <th>Status</th>
+    <th>Actions</th>
+  </tr>
+  <tr *ngFor="let user of users">
+    <td>{{user.username}}</td>
+    <td>{{user.role}}</td>
+    <td *ngIf="user.enabled">Active</td>
+    <td *ngIf="!user.enabled">Requested
+      <button (click)="onUserResendRequest(user.username)" class="send_request_button"> Resend request</button>
+    </td>
+    <td>
+      <button (click)="deleteUser(user.username)">Delete</button>
+    </td>
+  </tr>
+</table>

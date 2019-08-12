@@ -1,0 +1,62 @@
+<form>
+  <span *ngFor="let i of inputs">
+    <input *ngIf="i.component == 'key'" type="text" [placeholder]="i.placeholder"
+           (input)="onValueInput($event, 'key', false)">
+    <div *ngIf="i.component == 'value'">
+      <ul>
+        <li *ngFor="let j of languages" (click)="setLanguage($event, j)"
+            [ngClass]="{'active':j == language}">{{j}} <span></span></li>
+      </ul>
+      <span *ngFor="let j of i.inputs">
+        <textarea *ngIf="j.type == 'textarea'" [placeholder]="j.placeholder"
+                  (input)="onValueInput($event, j.name, j.translating)"
+                  [value]="getTextInputValue(j)">
+        </textarea>
+
+        <input *ngIf="j.type == 'input' && j.inputType != 'editBox' && j.inputType != 'listEditor'" [type]='j.inputType'
+               [min]="j.min" [max]="j.max"
+               [placeholder]="j.placeholder"
+               (input)="onValueInput($event, j.name, j.translating)"
+               [value]="getTextInputValue(j)"/>
+        <img *ngIf="j.inputType == 'file'" [src]="getImageUrl(j)" width="100%">
+        <span *ngIf="j.inputType == 'editBox'">
+          <app-ckeditor [languages]="languages" [language]="language"
+                        [name]="j.name" [translate]="j.translating"
+                        (change)="onValueInput($event, j.name, j.translating)"
+                        [data] = "getTextInputValue(j)"
+                        [config]="{toolbar : ['Heading','|', 'Undo', 'Redo' ,'|','Bold', 'Italic']}"></app-ckeditor>
+          <!--<span *ngFor="let l of languages">-->
+          <!--<ckeditor-->
+            <!--*ngIf="l == language"-->
+            <!--[editor]="Editor" [data]="getTextInputValue(j)"-->
+            <!--(change)="onValueInput($event, j.name, j.translating)"-->
+            <!--class="editor"-->
+            <!--[config]="{toolbar : ['Heading','|', 'Undo', 'Redo' ,'|','Bold', 'Italic'-->
+            <!--]}">-->
+          <!--</ckeditor>-->
+            <!--</span>-->
+        </span>
+
+        <span *ngIf="j.inputType == 'listEditor'">
+          <app-ckeditor [languages]="languages" [language]="language"
+                        [name]="j.name" [translate]="j.translating"
+                        (change)="onValueInput($event, j.name, j.translating)"
+                        [data] = "getTextInputValue(j)"
+                        [config]="{toolbar : ['BulletedList', 'Link']}"></app-ckeditor>
+          <!--<span *ngFor="let l of languages">-->
+          <!--<ckeditor-->
+            <!--*ngIf="l == language"-->
+            <!--[editor]="Editor"-->
+            <!--(change)="onMenuValueInput($event, j.name, j.translating)"-->
+            <!--class="editor"-->
+            <!--[config]="{toolbar : ['BulletedList', 'Link', 'Styles', 'FontSize', 'TextColor'], uiColor: '#99000'}"-->
+            <!--data="<ul> <li>sd </li> </ul>">-->
+          <!--</ckeditor>-->
+            <!--</span>-->
+        </span>
+
+      </span>
+    </div>
+    <p *ngIf="i.component == 'button'" (click)="onButtonClick()">{{i.value}}</p>
+  </span>
+</form>

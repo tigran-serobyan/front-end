@@ -1,0 +1,23 @@
+html{
+  margin: 0px;
+  padding: 0px;
+}
+body{
+  margin: 0px;
+  padding: 0px;
+}
+.wrapper{
+  background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
+  width: 100%;
+  margin: auto;
+  position: fixed;
+  left: 0px;
+  top: 20%;
+  padding: 10% 0;
+}
+h1{
+  font-family: sans-serif;
+  text-align: center;
+  color: white;
+  font-weight: 100;
+}

@@ -1,0 +1,112 @@
+<div *ngIf="canCreateNewProject" class="new_project">
+  <input type="text" (input)="onInputProjectName($event)">
+  <input type="checkbox" value="hy" (click)="changeLanguage($event)"> hy
+  <input type="checkbox" value="eng" (click)="changeLanguage($event)"> eng
+  <input type="checkbox" value="ru" (click)="changeLanguage($event)"> ru
+  <button (click)="onNewProject()" class="new_project_button"> New project</button>
+</div>
+
+<table>
+  <tr>
+    <th>Project Key</th>
+    <th>Creator</th>
+    <th>Owners</th>
+    <th *ngIf="!isAdmin">Languages</th>
+    <th>Status</th>
+    <th>Actions</th>
+  </tr>
+  <tr *ngFor="let project of projects; let i = index;"
+      onload="projects[i].dropdown = false; projects[i].showMore = false;">
+    <td *ngIf="!isAdmin"><a [href]="'manager/project/'+project.key">{{project.key}}</a></td>
+    <td *ngIf="isAdmin">{{project.key}}</td>
+    <td>{{project.creator}}</td>
+    <td *ngIf="!isAdmin">
+      <div *ngIf="project.owners.length<3">
+        <div *ngFor="let owner of project.owners">
+        <span (click)="deleteOwner(owner, project)"
+              [ngClass]="{'remove-owner': projects[i].dropdown, 'closed-remove-owner': !projects[i].dropdown}"> - </span>
+          {{owner}}
+        </div>
+      </div>
+
+      <div *ngIf="project.owners.length>=3">
+        <div>
+        <span (click)="deleteOwner(project.owners[0], project)"
+              [ngClass]="{'remove-owner': projects[i].dropdown, 'closed-remove-owner': !projects[i].dropdown}"> - </span>
+          {{project.owners[0]}}
+        </div>
+        <div>
+        <span (click)="deleteOwner(project.owners[1], project)"
+              [ngClass]="{'remove-owner': projects[i].dropdown, 'closed-remove-owner': !projects[i].dropdown}"> - </span>
+          {{project.owners[1]}}
+        </div>
+        <div
+          [ngClass]="{'users-dropdown': !projects[i].showMore,'users-dropdown-open': projects[i].showMore}">
+          <div *ngFor="let owner of project.owners.slice(2,project.owners.length)">
+        <span (click)="deleteOwner(owner, project)"
+              [ngClass]="{'remove-owner': projects[i].dropdown, 'closed-remove-owner': !projects[i].dropdown}"> - </span>
+            {{owner}}
+          </div>
+          <span (click)="projects[i].showMore = !projects[i].showMore"
+                *ngIf="projects[i].showMore"> Close </span>
+        </div>
+        <span (click)="projects[i].showMore = !projects[i].showMore"
+              *ngIf="!projects[i].showMore"> Show more </span>
+      </div>
+
+    </td>
+    <td class="owners" *ngIf="isAdmin">
+      <div *ngIf="project.owners.length<3">
+        <div *ngFor="let owner of project.owners">
+        <span (click)="deleteOwner(owner, project)"
+              [ngClass]="{'remove-owner': projects[i].dropdown, 'closed-remove-owner': !projects[i].dropdown}"> - </span>
+          {{owner}}
+        </div>
+      </div>
+      <div *ngIf="project.owners.length>=3">
+        <div>
+        <span (click)="deleteOwner(project.owners[0], project)"
+              [ngClass]="{'remove-owner': projects[i].dropdown, 'closed-remove-owner': !projects[i].dropdown}"> - </span>
+          {{project.owners[0]}}
+        </div>
+        <div>
+        <span (click)="deleteOwner(project.owners[1], project)"
+              [ngClass]="{'remove-owner': projects[i].dropdown, 'closed-remove-owner': !projects[i].dropdown}"> - </span>
+          {{project.owners[1]}}
+        </div>
+        <div
+          [ngClass]="{'users-dropdown': !projects[i].showMore && !projects[i].dropdown,'users-dropdown-open': projects[i].showMore || projects[i].dropdown}">
+          <div *ngFor="let owner of project.owners.slice(2,project.owners.length)">
+        <span (click)="deleteOwner(owner, project)"
+              [ngClass]="{'remove-owner': projects[i].dropdown, 'closed-remove-owner': !projects[i].dropdown}"> - </span>
+            {{owner}}
+          </div>
+          <span class="show-more" (click)="projects[i].showMore = !projects[i].showMore"
+                *ngIf="projects[i].showMore && !projects[i].dropdown"> Close </span>
+        </div>
+        <span class="show-more" (click)="projects[i].showMore = !projects[i].showMore"
+              *ngIf="!projects[i].showMore && !projects[i].dropdown"> Show more </span>
+      </div>
+      <span [ngClass]="{'dropdown': projects[i].dropdown, 'closed-dropdown': !projects[i].dropdown}">
+        <span *ngFor="let user of users">
+          <div *ngIf="isNotOwner(user, project.owners)">
+            <span (click)="addOwner(user, project)" class="add-owner"> + </span>
+            {{user}}
+          </div>
+       </span>
+        <span (click)="projects[i].dropdown = !projects[i].dropdown" *ngIf="projects[i].dropdown" class="edit"> Close </span>
+      </span>
+      <span (click)="projects[i].dropdown = !projects[i].dropdown" *ngIf="!projects[i].dropdown" class="edit"> Edit </span>
+    </td>
+    <td *ngIf="!isAdmin">
+      {{project.requiredLocales}}
+    </td>
+    <td>{{project.status}}</td>
+    <td *ngIf="!isAdmin">
+      <button (click)="deleteProject(i)">Delete</button>
+    </td>
+    <td *ngIf="isAdmin">
+      <button (click)="saveProject(i)" class="save_project_button">Save</button>
+    </td>
+  </tr>
+</table>

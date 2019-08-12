@@ -1,0 +1,5 @@
+<a *ngFor="let j of dropdown" [href]="j.link">
+  <span><i [class]="j.icon"></i></span>
+  <p>{{j.name}}</p>
+  <app-dropdown-menu *ngIf="j.dropdown" [dropdown]="j.dropdown"> </app-dropdown-menu>
+</a>

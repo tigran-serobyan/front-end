@@ -1,0 +1,10 @@
+<span *ngFor="let l of languages">
+    <ckeditor
+      *ngIf="l == language"
+      [editor]="Editor"
+      (change)="onChange($event)"
+      class="editor"
+      [config]="config"
+      [data] = "data">
+    </ckeditor>
+</span>

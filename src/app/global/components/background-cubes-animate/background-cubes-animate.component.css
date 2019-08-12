@@ -1,0 +1,87 @@
+ul li{
+  position: fixed;
+  z-index: -1;
+  display: block;
+  list-style-type: none;
+  background: rgba(255,255,255,0.3);
+}
+ul li:nth-child(1) {
+  padding: 25px;
+  animation: goUp1 25s infinite linear;
+}
+ul li:nth-child(2) {
+  padding: 50px;
+  animation: goUp2 12s infinite linear;
+}
+ul li:nth-child(3) {
+  padding: 5px;
+  animation: goUp3 20s infinite linear;
+}
+ul li:nth-child(4) {
+  padding: 15px;
+  animation: goUp4 24s infinite linear;
+}
+ul li:nth-child(5) {
+  padding: 20px;
+  animation: goUp5 22s infinite linear;
+}
+ul li:nth-child(6) {
+  padding: 40px;
+  animation: goUp6 18s infinite linear;
+}
+ul li:nth-child(7) {
+  padding: 30px;
+  animation: goUp7 25s infinite linear;
+}
+ul li:nth-child(8) {
+  padding: 40px;
+  animation: goUp8 16s infinite linear;
+}
+ul li:nth-child(9) {
+  padding: 60px;
+  animation: goUp9 29s infinite linear;
+}
+ul li:nth-child(10) {
+  padding: 20px;
+  animation: goUp10 16s infinite linear;
+}
+@keyframes goUp1 {
+  from {left: 10%; top: 110%; -webkit-transform: rotate(0deg);}
+  to {left: 10%; top: -100%; -webkit-transform: rotate(520deg);}
+}
+@keyframes goUp2 {
+  from {left: 20%; top: 100%; -webkit-transform: rotate(-90deg);}
+  to {left: 20%; top: -100%; -webkit-transform: rotate(360deg);}
+}
+@keyframes goUp3 {
+  from {left: 60%; top: 100%; -webkit-transform: rotate(50deg);}
+  to {left: 60%; top: -100%; -webkit-transform: rotate(800deg);}
+}
+@keyframes goUp4 {
+  from {left: 40%; top: 180%; -webkit-transform: rotate(-110deg);}
+  to {left: 40%; top: -100%; -webkit-transform: rotate(320deg);}
+}
+@keyframes goUp5 {
+  from {left: 65%; top: 120%; -webkit-transform: rotate(-60deg);}
+  to {left: 65%; top: -100%; -webkit-transform: rotate(600deg);}
+}
+@keyframes goUp6 {
+  from {left: 5%; top: 150%; -webkit-transform: rotate(110deg);}
+  to {left: 5%; top: -100%; -webkit-transform: rotate(660deg);}
+}
+@keyframes goUp7 {
+  from {left: 35%; top: 160%; -webkit-transform: rotate(-100deg);}
+  to {left: 35%; top: -100%; -webkit-transform: rotate(260deg);}
+}
+@keyframes goUp8 {
+  from {left: 85%; top: 190%; -webkit-transform: rotate(-60deg);}
+  to {left: 85%; top: -100%; -webkit-transform: rotate(460deg);}
+}
+@keyframes goUp9 {
+  from {left: 60%; top: 170%; -webkit-transform: rotate(-180deg);}
+  to {left: 60%; top: -100%; -webkit-transform: rotate(620deg);}
+}
+@keyframes goUp10 {
+  from {left: 50%; top: 130%; -webkit-transform: rotate(0deg);}
+  to {left: 50%; top: -100%; -webkit-transform: rotate(600deg);}
+}

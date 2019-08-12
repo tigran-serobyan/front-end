@@ -1,0 +1,78 @@
+table {
+  width: 80%;
+  margin: auto;
+  border-collapse: collapse;
+  font-family: 'Roboto', sans-serif;
+}
+
+th {
+  text-align: left;
+  border: solid 1px #cecece;
+  padding: 10px 5px;
+}
+
+th:nth-last-child(1) {
+  width: 10%;
+}
+
+td {
+  border: solid 1px #cecece;
+  padding: 10px 5px;
+}
+
+.language {
+  padding: 2px 8px;
+  margin: 2px 4px;
+  color: white;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  position: relative;
+}
+
+.language::after {
+  content: "";
+  background-image: url('flags.jpg');
+  position: absolute;
+  z-index: -1;
+  padding: 10px 14px;
+  border-radius: 20px;
+  left: 0;
+  filter: brightness(75%);
+}
+.language.ge::after {
+   background-position: 62px 290px;
+ }
+.language.hy::after {
+  background-position: 194px 381px;
+}
+.language.am::after {
+  background-position: 194px 381px;
+}
+.language.ru::after {
+  background-position: 30px 154px;
+}
+.language.en::after {
+  background-position: -1px 63px;
+}
+.language.it::after {
+  background-position: 292px 245px;
+}
+.language.fr::after {
+  background-position: 160px 291px;
+}
+.language.sp::after {
+  background-position: 258px 109px;
+}
+.language.ch::after {
+  background-position: 128px 336px;
+}
+.language.de::after {
+  background-position: 30px 290px;
+}
+.language.la::after {
+  background-position: -34px 63px;
+}
+.language.jp::after {
+  background-position: 226px 245px;
+}

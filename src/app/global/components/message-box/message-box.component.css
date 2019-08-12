@@ -1,0 +1,29 @@
+.message-box{
+  border-radius: 5px;
+  position: fixed;
+  top: 20px;
+  margin: 0px 20%;
+  padding: 20px;
+  text-align: center;
+  z-index: 1;
+  width: 60%;
+  box-sizing: border-box;
+  border: solid 2px #333333;
+  background: #33333380;
+}
+.error{
+  border: solid 2px #cc0303;
+  background: #cc0303c0;
+}
+.message{
+  border: solid 2px #03aa03;
+  background: #03aa03c0;
+}
+.warning{
+  border: solid 2px #ccaa03;
+  background: #ccaa03c0;
+}
+.info{
+  border: solid 2px #0377cc;
+  background: #0377ccc0;
+}

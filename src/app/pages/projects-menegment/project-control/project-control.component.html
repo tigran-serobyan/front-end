@@ -1,0 +1,23 @@
+<ul class="tabs">
+  <span *ngFor="let tab of tabsList">
+    <a [href]="'manager/project/'+projectKey+'/'+tab.link">
+    <li>
+    {{tab.name}}
+  </li>
+      </a>
+  </span>
+</ul>
+
+<select (change)="changeLanguage($event)" >
+  <option *ngFor="let language of languages" [value]="language">{{language}}</option>
+</select>
+
+<app-resources *ngIf="tabName=='resources'" [list]="resources" [languages]="languages"
+               [projectKey]='projectKey'></app-resources>
+<app-banners *ngIf="tabName=='banners'" [list]="banners" [projectKey]='projectKey'></app-banners>
+<app-news *ngIf="tabName=='news'" [list]="news"></app-news>
+<app-branches *ngIf="tabName=='branches'" [list]="branches"></app-branches>
+<app-email-templates *ngIf="tabName=='emailTemplates'" [list]="emailTemplates"></app-email-templates>
+<app-sms-templates *ngIf="tabName=='smsTemplates'" [list]="smsTemplates"></app-sms-templates>
+<app-image-uploads *ngIf="tabName=='imageUploads'" [list]="imageUploads"></app-image-uploads>
+<app-icon-uploads *ngIf="tabName=='iconUploads'" [list]="iconUploads"></app-icon-uploads>

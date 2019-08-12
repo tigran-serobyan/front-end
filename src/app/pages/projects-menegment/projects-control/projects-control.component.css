@@ -1,0 +1,169 @@
+.new_project {
+  width: 40%;
+  display: inline-block;
+  margin: 0px 30%;
+}
+
+.new_project input[type="text"] {
+  width: 35%;
+  box-sizing: border-box;
+}
+
+.new_project button {
+  width: 25%;
+  box-sizing: border-box;
+}
+
+input[type="text"] {
+  outline: none;
+  padding: 5px;
+  margin: 5px;
+  border: solid 2px #ccc;
+  transition: 0.5s;
+}
+
+input[type='checkbox'] {
+  display: inline;
+
+}
+
+input:focus {
+  border: solid 2px #aaa;
+}
+
+button {
+  outline: none;
+  padding: 5px;
+  color: white;
+  background: #aaa;
+  border: solid 2px #aaa;
+  transition: 0.5s;
+}
+
+button:hover {
+  background: #ac0202;
+  border: solid 2px #ac0202;
+}
+
+.new_project_button:hover, .save_project_button:hover {
+  background: #02ac02;
+  border: solid 2px #02ac02;
+}
+
+table {
+  margin: auto;
+  border: none;
+  border-collapse: collapse;
+}
+
+td {
+  padding: 10px 15px 10px 15px;
+  transition: 1s;
+}
+
+th {
+  padding: 10px;
+  transition: 1s;
+}
+
+tr:nth-child(even) {
+  background: #ddd;
+  border-top: solid 1px #ccc;
+  transition: 1s;
+}
+
+tr:nth-child(odd) {
+  background: #eee;
+  border-top: solid 1px #ccc;
+  transition: 1s;
+}
+
+tr:nth-child(1) {
+  background: #333;
+  color: white;
+  border: none;
+}
+
+td b {
+  margin-left: 5px;
+}
+
+.closed-dropdown {
+  z-index: 1;
+  font-size: 0px;
+  transition: 0.2s;
+}
+
+.dropdown {
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 10px 5px;
+  color: white;
+  display: block;
+  font-size: 16px;
+  transition: 0.3s;
+  border-radius: 15px;
+}
+
+.remove-owner {
+  display: inline-block;
+  background: #ac0202;
+  color: white;
+  padding: 3px 10px;
+  border-radius: 15px;
+  font-size: 14px;
+  transition: 0.5s;
+}
+
+.closed-remove-owner {
+  display: inline-block;
+  padding: 0px;
+  font-size: 0px;
+  transition: 0.5s;
+}
+
+.dropdown .add-owner {
+  display: inline-block;
+  background: #0377cc;
+  color: white;
+  padding: 3px 10px;
+  border-radius: 15px;
+}
+
+.closed-dropdown .add-owner {
+  padding: 0px 0px;
+}
+
+.owners {
+  min-width: 200px;
+}
+
+.owners > div {
+  margin-left: 5px;
+}
+
+.users-dropdown {
+  border-radius: 5px;
+  font-size: 0px;
+  padding: 0px;
+  color: #1e1e1e;
+  transition: 0.5s;
+}
+
+.users-dropdown-open {
+  border-radius: 15px;
+  font-size: 16px;
+  color: #1e1e1e;
+  transition: 0.5s;
+}
+
+.show-more {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  font-weight: bold;
+}
+
+.edit {
+  font-weight: bold;
+}

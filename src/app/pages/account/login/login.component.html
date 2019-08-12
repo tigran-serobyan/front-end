@@ -1,0 +1,18 @@
+<app-message-box></app-message-box>
+
+<div class="wrapper">
+  <div class="container">
+    <h1>Welcome</h1>
+    <input
+      placeholder="Username"
+      (input)="onFormDataChange($event,'username')"/>
+    <input
+      type="password"
+      placeholder="Password"
+      (input)="onFormDataChange($event,'password')"/>
+    <button (click)="onLogin()">
+      Log in
+    </button>
+  </div>
+  <app-background-cubes-animate></app-background-cubes-animate>
+</div>

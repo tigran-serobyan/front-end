@@ -1,0 +1,21 @@
+<app-message-box></app-message-box>
+
+<div>
+  <div class="header">
+    <a class="log-out-button" (click)="logout()">Log out</a>
+  </div>
+
+  <div class="left">
+    <a *ngFor="let n of list" [href]="n.link">
+      <span><i [class]="n.icon"></i></span>
+      <p>{{n.name}}</p>
+      <app-dropdown-menu *ngIf="n.dropdown" [dropdown]="n.dropdown"></app-dropdown-menu>
+    </a>
+  </div>
+
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+
+
+</div>
